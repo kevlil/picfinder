@@ -1,0 +1,18 @@
+
+.vertical-spacing {
+  margin: 2% 0;
+}
+
+.image-caption {
+  color: #AAA;
+}
+
+.image,
+.image-wrapper,
+.image .img-responsive {
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+}
