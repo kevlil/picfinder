@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Picture Finder App</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="./main.css" rel="stylesheet">
 
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -28,49 +28,50 @@
 
             <div class="col-xs-5 col-sm-5">
                 <label for="basepath">Base Path</label>
-                <input type="text" class="form-control" id="basepath"  v-bind:placeholder="basepath">
+                <input type="text" class="form-control" id="basepath" v-model="basepath" v-bind:placeholder="basepath">
             </div>
 
             <div class="col-xs-5 col-sm-3">
                 <label for="basepath">Image Name</label>
-                <input type="text" class="form-control" id="basepath"  v-bind:placeholder="imagename">
+                <input type="text" class="form-control" id="basepath"  v-model="imagename" v-bind:placeholder="imagename">
             </div>
 
             <div class="col-xs-2 col-sm-2">
                 <label for="basepath">Type</label>
-                <input type="text" class="form-control" id="basepath"  v-bind:placeholder="filetype">
+                <input type="text" class="form-control" id="basepath" v-model="filetype" v-bind:placeholder="filetype">
             </div>
 
             <div class="col-xs-6 col-sm-1">
               <label for="basepath">Start</label>
-              <input type="text" class="form-control" id="basepath"  v-bind:placeholder="start">
+              <input type="text" class="form-control" id="basepath" v-model="start" v-bind:placeholder="start">
             </div>
 
             <div class="col-xs-6 col-sm-1">
               <label for="basepath">Max</label>
-              <input type="text" class="form-control" id="basepath"  v-bind:placeholder="end">
+              <input type="text" class="form-control" id="basepath" v-model="end" v-bind:placeholder="end">
             </div>
 
           </div>
         </div>
       </div>
 
-      <nav class="row content-navigation">
-        <div class="col-lg-12">
-          <div class="pull-left text-center jumbo-button-wrapper jumbo-left">
-            <button class="btn btn-primary"><i><</i> Previous</button>
-          </div>
-          <div class="pull-right text-center jumbo-button-wrapper jumbo-right">
-            <button class="btn btn-primary">Next <i>></i></button>
-          </div>
-        </div>
-      </nav>
-
       <div class="row vertical-spacing content-body">
-        <div class="col-lg-12">
-          <div class="image-wrapper">
-            <div class="image">
-              <img class="img-responsive" v-bind:src="src" v-bind:alt="title" />
+        <div class="text-center col-lg-12">
+          <div class="vertical-spacing d-inline-block">
+            <div class="image-wrapper">
+
+              <div v-on:click="previous" class="text-center jumbo-button-wrapper jumbo-left">
+                <span class="jumbo-button"><i><</i><span class="jumbo-button-label">Prev</span></span>
+              </div>
+
+              <div v-on:click="next" class="text-center jumbo-button-wrapper jumbo-right">
+                <span class="jumbo-button"><span class="jumbo-button-label">Next</span><i>></i></span>
+              </div>
+
+              <div class="image">
+                <img class="img-responsive" v-bind:src="src" v-bind:alt="title" />
+              </div>
+              
             </div>
             <div class="text-right image-caption">
               <label class="path-display" v-html="src"></label>
