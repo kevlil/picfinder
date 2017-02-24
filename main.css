@@ -1,3 +1,10 @@
+label {
+  display: block;
+}
+
+.interactive {
+  cursor: pointer;
+}
 
 .vertical-spacing {
   margin: 2% 0;
@@ -9,6 +16,8 @@
 
 .image-wrapper {
   max-width: 100%;
+  min-width: 468px;
+  min-height: 468px;
 }
 
 .image,
@@ -43,7 +52,6 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  cursor: pointer;
   background: #000;
   opacity: 0;
   color: #FFF;

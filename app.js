@@ -17,12 +17,12 @@ var app2 = new Vue({
   },
   methods: {
     next: function(event) {
-      var which = this.which + 1;
+      var which =  this.which + 1;
 
       if(this.end != null && which > this.end) {
-        this.which = (this.start !== null)? this.start : this.end;
+        this.which = parseInt((this.start !== null)? this.start : this.end);
       } else {
-        this.which = which;
+        this.which = parseInt(which);
       }
 
     },
@@ -30,10 +30,13 @@ var app2 = new Vue({
       var which = this.which - 1;
 
       if(this.start != null && which < this.start) {
-          this.which = (this.end != null)? this.end : this.start;
+          this.which = parseInt((this.end != null)? this.end : this.start);
       } else {
-        this.which = which;
+        this.which = parseInt(which);
       }
+    },
+    reset: function(event) {
+      if(this.start != null) this.which = parseInt(this.start);
     }
   }
 })
